@@ -1,1 +1,1 @@
-# DEA-group-assignment
+# Project Proposal for DEA group
