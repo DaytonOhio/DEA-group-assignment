@@ -9,3 +9,4 @@
 >track their progress, see their growth over time, and project their results into the future. Anadmin role will exist to 
 >monitor accounts for progress and to ensure that all users are good faith actors. 
 
+![RESIZED_lifting_myths](https://user-images.githubusercontent.com/111515347/216869152-53a6f035-6dd8-4ea8-a36a-d85b629c7f04.gif)
