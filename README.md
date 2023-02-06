@@ -1,7 +1,7 @@
 # Project Proposal for DEA group
 ## Workout Planner
 
-##Description
+## Description
 
 >A Workout Planner is a tool to help all levels of active people plan out, project, and accomplish their goals in the gym. 
 >The purpose of this tool is to reduce to knowledge barrier for working out and to reduce the time needed to plan future workouts. 
