@@ -25,14 +25,21 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.css" type="text/css"/>
+
     </head>
 
     <body>
         <!-- Header Start -->
+
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
                     <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                        <h1 class="m-0 display-4 text-primary text-uppercase" style="font-size: 60px; display: block;">
+                            WORKOUT<br>
+                            PLANNER
+                        </h1>                    
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -56,7 +63,7 @@
                                 <a href="about.html" class="nav-item nav-link">About</a>
                                 <a href="class.html" class="nav-item nav-link">Classes</a>
                                 <a href="team.html" class="nav-item nav-link">Trainers</a>
-                                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                                <a href="Contact.html" class="nav-item nav-link active">Contact</a>
                             </div>
                             <a href="" class="btn btn-primary py-md-3 px-md-5 d-none d-lg-block">Join Us</a>
                         </div>
@@ -86,10 +93,9 @@
                         <div class="d-flex justify-content-center mb-3" style="display: flex;">
                             <label for="user-type" class="mr-4 text-white align-top">SELECT USER-TYPE:</label>
                             <select class="form-control" id="user-type" style="max-width: 300px;">
-                                <option class="text-white"></option>
-                                <option class="text-white">Administrator</option>
-                                <option class="text-white">Athlete</option>
-                                <option class="text-white">Coach</option>
+                                <option class="text-black-50">Athlete</option>
+                                <option class="text-black-50">Admin</option>
+                                <option class="text-black-50">Coach</option>
                             </select>
                         </div>
 
@@ -139,9 +145,9 @@
                     case "Coach":
                         window.location.href = "coach.html";
                         break;
-                    default:
-                        alert("Please select a user type.");
-                        break;
+                    case "Admin":
+                        window.location.href = "admin.html";
+
                 }
             });
         </script>
