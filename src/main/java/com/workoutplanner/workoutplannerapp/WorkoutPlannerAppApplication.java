@@ -13,9 +13,5 @@ public class WorkoutPlannerAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WorkoutPlannerAppApplication.class, args);
 	}
-        @GetMapping("/hello")
-        public String hello(){
-            return "Hello World!!!!";
-        }
-
+        
 }

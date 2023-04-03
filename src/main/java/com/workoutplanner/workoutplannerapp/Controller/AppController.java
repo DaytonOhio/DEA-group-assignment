@@ -13,41 +13,55 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class AppController {
-    
-    @GetMapping("/")
+
+    @GetMapping("/index")
     public String index() {
         return "index";
     }
-    
+
     @GetMapping("/about")
     public String about() {
         return "about";
     }
-    
+
     @GetMapping("/contact")
     public String contact() {
         return "contact";
     }
+
     @GetMapping("/login")
     public String login() {
         return "login";
     }
+
     @GetMapping("/team")
     public String team() {
         return "team";
     }
+
     @GetMapping("/coach")
     public String coach() {
         return "coach";
     }
+
     @GetMapping("/athlete")
     public String athlete() {
         return "athlete";
     }
-    
+
     @GetMapping("/admin")
     public String admin() {
         return "admin";
     }
-   
+
+    @GetMapping("/athlete-max")
+    public String athletemax() {
+        return "athlete-max";
+    }
+
+    @GetMapping("/athlete-view-schedule")
+    public String athleteViewSchedule() {
+        return "athlete-view-schedule";
+    }
+
 }
