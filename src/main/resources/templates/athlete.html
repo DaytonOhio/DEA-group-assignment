@@ -53,7 +53,7 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="/athlete" class="nav-item nav-link">Home</a>
+                                <a href="/athlete" class="nav-item nav-link active">Dashboard</a>
                                 <a href="/athlete-view-schedule" class="nav-item nav-link">View Schedule</a>
                                 <a href="/athlete-max" class="nav-item nav-link">Max Lift Calculator</a>
                             </div> 
@@ -71,29 +71,50 @@
 
 
 
-        <!-- Blog Start -->
+        <!-- dashboard Start -->
         <div class="container-fluid p-5">
             <div class="row g-5">
                 <div class="col-lg-8">
-                    <!-- Blog Detail Start -->
                     <div class="mb-5">
                         <h1 class="text-uppercase mb-4">Dashboard</h1>
-                        <p> visuals of profile etc:
-                            day + what workout for today</p>
-                    </div>
-                    <!-- Blog Detail End -->
-
-                    <!-- Comment List Start -->
-                    <div class="mb-5">
-                        <h3 class="text-uppercase mb-4">Monday</h3>
-                        <div class="d-flex mb-4">
-                            <div class="ps-3">
-                                <p>[workout + timing]</p>
-                            </div>
+                        <p>visuals of profile etc: day + what workout for today</p>
+                        <div id="quote">
+                            <p>Loading quote...</p>
                         </div>
-
                     </div>
-                    <!-- Comment List End -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const quoteDiv = document.getElementById("quote");
+
+            fetch("https://api.quotable.io/random")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        quoteDiv.innerHTML = `<p>${data.content}</p><p>- ${data.author}</p>`;
+                    })
+                    .catch((error) => {
+                        console.log("Failed to retrieve quote:", error);
+                        quoteDiv.innerHTML = "<p>Failed to retrieve quote.</p>";
+                    });
+        </script>
+
+
+
+
+
+        <!-- Comment List Start -->
+        <div class="mb-5">
+            <h3 class="text-uppercase mb-4">Monday</h3>
+            <div class="d-flex mb-4">
+                <div class="ps-3">
+                    <p>[workout + timing]</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Comment List End -->
 
 
 
@@ -107,20 +128,20 @@
 
 
 
-                    <!-- Back to Top -->
-                    <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-                    <!-- JavaScript Libraries -->
-                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                    <script src="lib/easing/easing.min.js"></script>
-                    <script src="lib/waypoints/waypoints.min.js"></script>
-                    <script src="lib/counterup/counterup.min.js"></script>
-                    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-                    <!-- Template Javascript -->
-                    <script src="js/main.js"></script>
-                    </body>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
 
-                    </html>
+</html>

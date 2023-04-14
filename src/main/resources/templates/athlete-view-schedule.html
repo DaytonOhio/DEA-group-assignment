@@ -53,10 +53,12 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="/athlete" class="nav-item nav-link">Home</a>
-                                <a href="/athlete-view-schedule" class="nav-item nav-link">View Schedule</a>
+                                <a href="/athlete" class="nav-item nav-link">Dashboard</a>
+                                <a href="/athlete-view-schedule" class="nav-item nav-link active">View Schedule</a>
                                 <a href="/athlete-max" class="nav-item nav-link">Max Lift Calculator</a>
                             </div>
+                            <a href="/index" class="nav-item nav-link">Log Out</a>
+
                             <a class=" py-md-3 px-md-5 d-none text-white d-lg-block">[ATHLETE NAME]</a>
                         </div>
                     </nav>
@@ -77,240 +79,449 @@
             <div class="tab-class text-center">
                 <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase mb-5">
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-1">Monday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#monday">Monday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Tuesday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tuesday">Tuesday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Wednesday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#wednesday">Wednesday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-4">Thursday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#thursday">Thursday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-5">Friday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#friday">Friday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-6">Saturday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#saturday">Saturday</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-7">Sunday</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#sunday">Sunday</a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div id="monday" class="tab-pane fade show p-0 active">
+                        <!-- Monday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <div class="bg-dark rounded text-center py-5 px-3">
-                                    <h6 class="text-uppercase text-light mb-3">[Timing]</h6>
-                                    <h5 class="text-uppercase text-white text-primary">[Workout Type]</h5>
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <div class="bg-dark rounded text-center py-5 px-3">
-                                    <h6 class="text-uppercase text-light mb-3">[Timing]</h6>
-                                    <h5 class="text-uppercase text-white text-primary">[Workout Type]</h5>
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <div class="bg-dark rounded text-center py-5 px-3">
-                                    <h6 class="text-uppercase text-light mb-3">[Timing]</h6>
-                                    <h5 class="text-uppercase text-white text-primary">[Workout Type]</h5>
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <div class="bg-dark rounded text-center py-5 px-3">
-                                    <h6 class="text-uppercase text-light mb-3">[Timing]</h6>
-                                    <h5 class="text-uppercase text-white text-primary">[Workout Type]</h5>
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div id="tab-2" class="tab-pane fade p-0">
+                    <div id="tuesday" class="tab-pane fade show p-0">
+                        <!-- Tuesday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade p-0">
-                        <div class="row g-5">
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-4" class="tab-pane fade p-0">
+                    <div id="wednesday" class="tab-pane fade show p-0">
+                        <!-- Wednesday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-5" class="tab-pane fade p-0">
+                    <div id="thursday" class="tab-pane fade show p-0">
+                        <!-- Thursday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-6" class="tab-pane fade p-0">
+                    <div id="friday" class="tab-pane fade show p-0">
+                        <!-- Friday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-7" class="tab-pane fade p-0">
+                    <div id="saturday" class="tab-pane fade show p-0">
+                        <!-- Saturday workout blocks here -->
                         <div class="row g-5">
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sunday" class="tab-pane fade show p-0">
+                        <!-- Sunday workout blocks here -->
+                        <div class="row g-5">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6">
-
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-
+                                <div class="bg-dark rounded text-center py-5 px-3">
+                                    <h5 class="text-uppercase text-white workout-type">[Workout Type]</h5>
+                                    <span class="text-uppercase text-white">Sets:</span>
+                                    <h6 class="text-uppercase text-white sets">[Sets]</h6>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Edit Workout</button>
+                                    <button class="btn btn-primary add-workout-btn" data-bs-toggle="modal" data-bs-target="#add-workout-modal">Add Workout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        
+                    </div>
+                </div>
+                <!-- Add Workout Modal -->
+                <div class="modal fade" id="add-workout-modal" tabindex="-1" role="dialog" aria-labelledby="add-workout-modal-label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="add-workout-modal-label">Edit Workout</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="workout-name">Workout Name</label>
+                                        <input type="text" class="form-control" id="workout-name" name="workout-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="num-sets">Number of Sets</label>
+                                        <input type="text" class="form-control" id="num-sets" name="num-sets">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary close-workout-modal" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary save-workout-btn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <!-- Class Timetable Start -->
+    </div>
+    <!-- Class Timetable Start -->
+
+    <script>
+        const editWorkoutBtns = document.querySelectorAll(".edit-workout-btn");
+        const addWorkoutBtns = document.querySelectorAll(".add-workout-btn");
+        const saveWorkoutBtn = document.querySelector(".save-workout-btn");
+        const workoutNameInput = document.querySelector("#workout-name");
+        const numSetsInput = document.querySelector("#num-sets");
+        let currentWorkout = null;
+
+        // Open the add/edit workout modal when the button is clicked
+        editWorkoutBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                currentWorkout = btn.parentElement;
+                const workoutType = currentWorkout.querySelector(".workout-type").textContent;
+                const numSets = currentWorkout.querySelector(".sets").textContent;
+                workoutNameInput.value = workoutType;
+                numSetsInput.value = numSets;
+                document.querySelector("#add-workout-modal-label").textContent = "Edit Workout";
+            });
+        });
+
+        addWorkoutBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                currentWorkout = btn.parentElement;
+                document.querySelector("#add-workout-modal-label").textContent = "Add Workout";
+            });
+        });
+
+        // Save the changes when the save button is clicked
+        saveWorkoutBtn.addEventListener("click", () => {
+            const workoutName = workoutNameInput.value;
+            const numSets = numSetsInput.value;
+
+            if (currentWorkout) {
+                currentWorkout.querySelector(".workout-type").textContent = workoutName;
+                currentWorkout.querySelector(".sets").textContent = numSets;
+
+            }
+
+            // Reset the form
+            workoutNameInput.value = "";
+            numSetsInput.value = "";
+            currentWorkout = null;
+
+            // Close the modal
+            const modal = document.querySelector("#add-workout-modal");
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            bootstrapModal.hide();
+        });
+
+        // Close the modal without saving when the close button is clicked
+        const closeBtns = document.querySelectorAll("[data-dismiss='modal']");
+        closeBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                currentWorkout = null;
+                workoutNameInput.value = "";
+                numSetsInput.value = "";
+
+                const modal = document.querySelector("#add-workout-modal");
+                const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                bootstrapModal.hide();
+
+            });
+
+        });
+
+        // Close the modal and discard changes when the x button is clicked
+        const modal = document.querySelector("#add-workout-modal");
+        modal.addEventListener("hidden.bs.modal", () => {
+            currentWorkout = null;
+            workoutNameInput.value = "";
+            numSetsInput.value = "";
+
+        });
+    </script>
 
 
 
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
 
 </html>

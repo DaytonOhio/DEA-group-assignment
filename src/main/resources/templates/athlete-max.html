@@ -53,10 +53,12 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="/athlete" class="nav-item nav-link">Home</a>
+                                <a href="/athlete" class="nav-item nav-link">Dashboard</a>
                                 <a href="/athlete-view-schedule" class="nav-item nav-link">View Schedule</a>
-                                <a href="/athlete-max" class="nav-item nav-link">Max Lift Calculator</a>
+                                <a href="/athlete-max" class="nav-item nav-link active">Max Lift Calculator</a>
                             </div>
+                            <a href="/index" class="nav-item nav-link">Log Out</a>
+
                             <a class=" py-md-3 px-md-5 d-none text-white d-lg-block">[ATHLETE NAME]</a>
                         </div>
                     </nav>
@@ -68,7 +70,7 @@
 
 
 
-        <!-- Blog Start -->
+        <!--  Start -->
         <div class="container-fluid p-5">
             <div class="row g-5">
                 <div class="col-lg-8">
@@ -78,47 +80,59 @@
                         <p> Please enter this information correctly as this will calculate the amount of weight you 
                             should be using for each set in order to see growth in your journey</p>
                     </div>
-                    <!-- Blog Detail End -->
+                    <!--  Detail End -->
 
 
 
-                    <!-- Comment Form Start -->
+                    <!--  Form Start -->
                     <div class="bg-dark rounded p-5">
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="Name of workout" style="height: 55px;">
+                                    <input type="text" id="workoutName" class="form-control bg-white border-0" placeholder="Name of workout" style="height: 55px;">
                                 </div>
 
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="# of sets" style="height: 55px;">
+                                    <input type="number" id="numSets" class="form-control bg-white border-0" placeholder="# of sets" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="Max weight (lbs)" style="height: 55px;">
+                                    <input type="number" id="maxWeight" class="form-control bg-white border-0" placeholder="Max weight (lbs)" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-light w-50 py-3" type="submit">Calculate</button>
+                                    <button class="btn btn-light w-50 py-3" type="button" onclick="calculate()">Calculate</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <!-- Comment Form End -->
-                </div>
+                    <!-- Form End -->
 
-
-
-                <!-- Results -->
-                <div class="mb-5">
-                    <h3 class="text-uppercase mb-4">Results</h3>
-                    <div class="d-flex flex-column justify-content-start bg-dark rounded p-4">
-                        <a class="fs-5 fw-bold text-light text-uppercase mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i></a>
-                        <a class="fs-5 fw-bold text-light text-uppercase mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i></a>
-                        <a class="fs-5 fw-bold text-light text-uppercase mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i></a>
-                        <a class="fs-5 fw-bold text-light text-uppercase mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i></a>
-                        <a class="fs-5 fw-bold text-light text-uppercase" href="#"><i class="bi bi-arrow-right text-white me-2"></i></a>
+                    <!-- Results -->
+                    <div class="mb-5">
+                        <h3 class="text-uppercase mb-4">Results</h3>
+                        <div id="results" class="d-flex flex-column justify-content-start bg-dark rounded p-4">
+                        </div>
                     </div>
-                </div>
-                <!-- Results-->
+                    <!-- Results-->
+
+                    <script>
+                        function calculate() {
+                            const maxLift = document.getElementById("maxWeight").value;
+                            const numSets = document.getElementById("numSets").value;
+
+                            fetch(`/athlete-max?maxLift=${maxLift}&numSets=${numSets}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const setWeights = data.setWeights;
+                                        const setReps = data.setReps;
+
+                                        // Do something with the set weights and reps
+                                        console.log(setWeights);
+                                        console.log(setReps);
+                                    })
+                                    .catch(error => console.error(error));
+                        }
+
+                    </script>
 
 
 
@@ -128,20 +142,20 @@
 
 
 
-                <!-- Back to Top -->
-                <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-                <!-- JavaScript Libraries -->
-                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="lib/easing/easing.min.js"></script>
-                <script src="lib/waypoints/waypoints.min.js"></script>
-                <script src="lib/counterup/counterup.min.js"></script>
-                <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                    <!-- JavaScript Libraries -->
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="lib/easing/easing.min.js"></script>
+                    <script src="lib/waypoints/waypoints.min.js"></script>
+                    <script src="lib/counterup/counterup.min.js"></script>
+                    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-                <!-- Template Javascript -->
-                <script src="js/main.js"></script>
-                </body>
+                    <!-- Template Javascript -->
+                    <script src="js/main.js"></script>
+                    </body>
 
-                </html>
+                    </html>

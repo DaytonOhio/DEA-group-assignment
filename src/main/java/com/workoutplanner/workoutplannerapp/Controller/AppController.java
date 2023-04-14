@@ -51,7 +51,7 @@ public class AppController {
 
     @GetMapping("/admin")
     public String admin() {
-        return "admin";
+        return "admin"; 
     }
 
     @GetMapping("/athlete-max")
@@ -61,7 +61,7 @@ public class AppController {
 
     @GetMapping("/athlete-view-schedule")
     public String athleteViewSchedule() {
-        return "athlete-view-schedule";
+        return "/athlete-view-schedule";
     }
 
 }
