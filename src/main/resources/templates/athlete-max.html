@@ -116,21 +116,29 @@
 
                     <script>
                         function calculate() {
-                            const maxLift = document.getElementById("maxWeight").value;
+                            const workoutName = document.getElementById("workoutName").value;
+                            const maxWeight = document.getElementById("maxWeight").value;
                             const numSets = document.getElementById("numSets").value;
 
-                            fetch(`/athlete-max?maxLift=${maxLift}&numSets=${numSets}`)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        const setWeights = data.setWeights;
-                                        const setReps = data.setReps;
+                            const weightIncrement = maxWeight / numSets;
+                            let setWeights = [];
+                            let setReps = [];
 
-                                        // Do something with the set weights and reps
-                                        console.log(setWeights);
-                                        console.log(setReps);
-                                    })
-                                    .catch(error => console.error(error));
+                            for (let i = 1; i <= numSets; i++) {
+                                const weight = ((maxWeight / numSets) * i).toFixed(2);
+                                const reps = 12 - ((i - 1) * 2);
+                                setWeights.push(weight);
+                                setReps.push(reps);
+                            }
+
+                            const resultsDiv = document.getElementById("results");
+                            resultsDiv.innerHTML = `<h4>${workoutName}</h4>`;
+                            for (let i = 0; i < numSets; i++) {
+                                resultsDiv.innerHTML += `<p>Set ${i + 1}: ${setWeights[i]} lbs, ${setReps[i]} reps</p>`;
+                            }
+                            resultsDiv.style.color = "white";
                         }
+
 
                     </script>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
     <head>
@@ -59,7 +59,7 @@
                             </div> 
                             <a href="/index" class="nav-item nav-link">Log Out</a>
 
-                            <a class=" py-md-3 px-md-5 d-none text-white d-lg-block">[ATHLETE NAME]</a>
+                            <a class=" py-md-3 px-md-5 d-none text-white d-lg-block"> [Athlete Username]</a>
 
                         </div>
                     </nav>
@@ -72,19 +72,31 @@
 
 
         <!-- dashboard Start -->
-        <div class="container-fluid p-5">
-            <div class="row g-5">
-                <div class="col-lg-8">
-                    <div class="mb-5">
-                        <h1 class="text-uppercase mb-4">Dashboard</h1>
-                        <p>visuals of profile etc: day + what workout for today</p>
-                        <div id="quote">
-                            <p>Loading quote...</p>
+        <div class="bg-dark p-5">
+            <div class="container-fluid">
+                <div class="row g-5">
+                    <div class="col-lg-8">
+                        <div class="mb-5 text-light">
+                            <h1 class="text-uppercase mb-4">Dashboard</h1>
+                            <p class="mb-5">Welcome back to your profile! Here is a quote for motivation!</p>
+                            <div id="quote">
+                                <p>Loading quote...</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <style>
+            .dashboard-text {
+                font-size: 2rem;
+                font-weight: 700;
+                font-family: 'Open Sans', sans-serif;
+            }
+        </style>
+
+
 
         <script>
             const quoteDiv = document.getElementById("quote");
@@ -92,12 +104,13 @@
             fetch("https://api.quotable.io/random")
                     .then((response) => response.json())
                     .then((data) => {
-                        quoteDiv.innerHTML = `<p>${data.content}</p><p>- ${data.author}</p>`;
+                        quoteDiv.innerHTML = `<p>"${data.content}"</p><p>- ${data.author}</p>`;
                     })
                     .catch((error) => {
                         console.log("Failed to retrieve quote:", error);
                         quoteDiv.innerHTML = "<p>Failed to retrieve quote.</p>";
                     });
+
         </script>
 
 
@@ -106,15 +119,27 @@
 
         <!-- Comment List Start -->
         <div class="mb-5">
-            <h3 class="text-uppercase mb-4">Monday</h3>
+            <h1 class="text-uppercase mb-4" id="dayOfWeek"></h1>
             <div class="d-flex mb-4">
                 <div class="ps-3">
-                    <p>[workout + timing]</p>
+                    <p id="currentTime"></p>
+
+                    <p> GO GYM</p>
                 </div>
             </div>
-
         </div>
         <!-- Comment List End -->
+
+        <script>
+            const dayOfWeek = new Date().toLocaleString('en-US', {weekday: 'long'});
+            document.getElementById("dayOfWeek").textContent = dayOfWeek;
+
+            setInterval(() => {
+                const now = new Date();
+                const currentTime = now.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+                document.getElementById("currentTime").textContent = `Current time: ${currentTime}`;
+            }, 1000);
+        </script>
 
 
 

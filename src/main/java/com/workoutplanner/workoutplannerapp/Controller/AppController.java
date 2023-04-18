@@ -4,8 +4,13 @@
  */
 package com.workoutplanner.workoutplannerapp.Controller;
 
+import com.workoutplanner.workoutplannerapp.model.Athlete;
+import com.workoutplanner.workoutplannerapp.service.AthleteService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
@@ -24,16 +29,14 @@ public class AppController {
         return "about";
     }
 
-    @GetMapping("/contact")
-    public String contact() {
+     @GetMapping("/contact")
+     public String contact() {
         return "contact";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
+     }
+//    @GetMapping("/login")
+//    public String login() {
+//        return "login";
+//    }
     @GetMapping("/team")
     public String team() {
         return "team";
@@ -48,10 +51,9 @@ public class AppController {
     public String athlete() {
         return "athlete";
     }
-
     @GetMapping("/admin")
     public String admin() {
-        return "admin"; 
+        return "admin";
     }
 
     @GetMapping("/athlete-max")
@@ -63,5 +65,41 @@ public class AppController {
     public String athleteViewSchedule() {
         return "/athlete-view-schedule";
     }
+    private final AthleteService athleteService;
 
+    public AppController(AthleteService athleteService) {
+        this.athleteService = athleteService;
+    }
+
+    @GetMapping("/register")
+    public String getRegisterPage(Model model) {
+        model.addAttribute("registerRequest", new Athlete());
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String getLoginPage(Model model) {
+        model.addAttribute("loginRequest", new Athlete());
+        return "login";
+    }
+
+    @PostMapping("/register")
+    public String register(@ModelAttribute Athlete athlete) {
+        System.out.println("register request: " + athlete);
+        Athlete registeredAthlete = athleteService.registerAthlete(athlete.getFirstName(), athlete.getLastName(), athlete.getUsername(), athlete.getPassword(), athlete.getEmail());
+        return registeredAthlete == null ? "error_page" : "redirect:/login";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute Athlete athlete) {
+        System.out.println("login request: " + athlete);
+        Athlete authenticated = athleteService.authenticate(athlete.getUsername(), athlete.getPassword());
+        if (authenticated != null) {
+            return "athlete";
+
+        } else {
+            return "error_page";
+        }
+
+    }
 }

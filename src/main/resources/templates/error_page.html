@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Error</title>
+    </head>
+    <body>
+        <h1>Error</h1>
+        <p>Sorry, an error has occurred. Please try again later.</p>
+        <p>Exception: <span th:text="${exception}"></span></p>
+        <p>Message: <span th:text="${message}"></span></p>
+        <p>Stack trace:</p>
+        <a href="/index" class="nav-item nav-link">Back to Home Page</a>
+
+        <pre><code th:text="${stackTrace}"></code></pre>
+
+</body>
+</html>
