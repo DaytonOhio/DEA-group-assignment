@@ -20,7 +20,7 @@ public class AthleteService {
     public AthleteService(AthleteRepository athleteRepository) {
         this.athleteRepository = athleteRepository;
     }
-
+    // Method for registration for athlete
     public Athlete registerAthlete(String first_name, String last_name, String username, String password, String email) {
         if (username != null && password != null) {
             Athlete athlete = new Athlete();
@@ -35,6 +35,7 @@ public class AthleteService {
         }
     }
     
+    // authentication method for login
     public Athlete authenticate(String username, String password){
         return athleteRepository.findByUsernameAndPassword(username, password).orElse(null);
     }

@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class AppController {
-
+    
+    // Mapping to html pages
     @GetMapping("/index")
     public String index() {
         return "index";
@@ -33,10 +34,7 @@ public class AppController {
      public String contact() {
         return "contact";
      }
-//    @GetMapping("/login")
-//    public String login() {
-//        return "login";
-//    }
+
     @GetMapping("/team")
     public String team() {
         return "team";

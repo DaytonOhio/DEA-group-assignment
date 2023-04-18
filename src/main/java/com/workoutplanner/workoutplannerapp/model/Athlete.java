@@ -50,7 +50,8 @@ public class Athlete {
     
     @Column(name = "password", nullable = false)
     private String password;
-
+    
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -98,7 +99,8 @@ public class Athlete {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    // The hash code is generated using a formula that takes into account each of 
+    // these fields, so that if two Athlete objects have the same values for these fields, they will have the same hash code.
     @Override
     public int hashCode() {
         int hash = 3;
@@ -110,7 +112,7 @@ public class Athlete {
         hash = 67 * hash + Objects.hashCode(this.password);
         return hash;
     }
-
+    // Checking if two athlete values equal
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

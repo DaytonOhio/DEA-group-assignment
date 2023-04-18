@@ -115,22 +115,26 @@
                     <!-- Results-->
 
                     <script>
+                        // This function takes user inputs of workout name, max weight and number of sets, and calculates set weights and reps for the workout
                         function calculate() {
                             const workoutName = document.getElementById("workoutName").value;
                             const maxWeight = document.getElementById("maxWeight").value;
                             const numSets = document.getElementById("numSets").value;
-
+                            
+                            // Create empty arrays to store set weights and reps
                             const weightIncrement = maxWeight / numSets;
                             let setWeights = [];
                             let setReps = [];
-
+                            
+                            // Loop through each set and calculate the weight and reps
                             for (let i = 1; i <= numSets; i++) {
                                 const weight = ((maxWeight / numSets) * i).toFixed(2);
                                 const reps = 12 - ((i - 1) * 2);
                                 setWeights.push(weight);
                                 setReps.push(reps);
                             }
-
+                            
+                            // Display the workout name and set weights and reps on the HTML page
                             const resultsDiv = document.getElementById("results");
                             resultsDiv.innerHTML = `<h4>${workoutName}</h4>`;
                             for (let i = 0; i < numSets; i++) {

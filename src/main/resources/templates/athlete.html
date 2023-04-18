@@ -100,7 +100,7 @@
 
         <script>
             const quoteDiv = document.getElementById("quote");
-
+            // Fetch Quotable API, parsing and printing quote and author
             fetch("https://api.quotable.io/random")
                     .then((response) => response.json())
                     .then((data) => {
@@ -131,6 +131,7 @@
         <!-- Comment List End -->
 
         <script>
+            // showing the current day and time on dashboard
             const dayOfWeek = new Date().toLocaleString('en-US', {weekday: 'long'});
             document.getElementById("dayOfWeek").textContent = dayOfWeek;
 
